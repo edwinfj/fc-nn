@@ -20,7 +20,7 @@ The basic steps to do training:
   - rms_prop
   - adam
 
-[gradient_check_example.txt] demonstrate how to do numerical check for backprop
+[gradient_check_examples.txt] demonstrate how to do numerical check for backprop
 gradients of a net.
 
 [predict_test_example.txt] demonstrates how to run prediction using a trained 
@@ -28,6 +28,6 @@ net model, or test a trained model on a dataset.
 
 
 [Stanford CS231n]: http://cs231n.github.io/
-[net_train_example.txt]: https://github.com/edwinfj/fc-nn/net_train_example.txt
-[gradient_check_example.txt]: https://github.com/edwinfj/fc-nn/gradient_check_example.txt
-[predict_test_example.txt]: https://github.com/edwinfj/fc-nn/predict_test_example.txt
+[net_train_example.txt]: https://github.com/edwinfj/fc-nn/blob/master/net_train_example.txt
+[gradient_check_examples.txt]: https://github.com/edwinfj/fc-nn/blob/gradient_check_examples.txt
+[predict_test_example.txt]: https://github.com/edwinfj/fc-nn/blob/predict_test_example.txt
