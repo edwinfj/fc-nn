@@ -1,0 +1,20 @@
+# python2.7
+"""
+This module demonstrates how to run prediction using a trained net model, or
+test a trained model on a dataset.
+"""
+import numpy as np
+from lib.classifiers.fc_net import *
+from lib.solver import Solver
+
+# suppose we already have below data
+X_test = ???
+solver = a solver wraps a already trained model
+
+y_pred, probability = solver.predict(X_test, scaled=False)
+# now y_pred holds the prediction result run by the model in the solver
+
+# if you already have the ground truth, you want to check accuracy
+y_test = ???
+test_accuracy = solver.check_accuracy(X_test, y_test, scaled=False)
+# test_accurary is the accuracy that the model in solver run prediction on X_test

@@ -1,0 +1,40 @@
+# python2.7
+"""
+this module demonstrate how to do numerical check for backprop gradients of
+a net.
+all numerical check functions are implemented in lib/gradient_check.py.
+"""
+
+
+import numpy as np
+from lib.fc_net import *
+from lib.gradient_check import eval_numerical_gradient, grad_check_sparse
+
+def rel_error(x, y):
+  """ a small utility that returns relative error """
+  return np.max(np.abs(x - y) / (np.maximum(1e-8, np.abs(x) + np.abs(y))))
+
+
+# check gradient of a 3 layer FC net using eval_nummerical_gradient()
+N, D, H1, H2, C = 2, 15, 20, 30, 10 # net config
+X = np.random.randn(N, D) # some random initialization
+y = np.random.randint(C, size=(N,)) # some random initialization
+# create the net model with above config
+model = FullyConnectedNet([H1, H2], input_dim=D, num_classes=C,
+                        weight_scale=5e-2, dtype=np.float64,
+                        dropout=0.5, seed=123)
+loss, grads = model.loss(X, y) # forward and backward to get loss and gradients
+print 'Initial loss: ', loss
+
+# below compare backprop gradients to numerical gradients in two different ways
+
+for name in sorted(grads):
+	f = lambda _: model.loss(X, y)[0]
+  # a naive implementation that calculates gradients at all parameters
+  grad_num = eval_numerical_gradient(f, model.params[name], verbose=False, h=1e-5)
+  print '%s relative error: %.2e' % (name, rel_error(grad_num, grads[name]))
+
+for name in sorted(grads):
+	f = lambda _: model.loss(X, y)[0]
+	# sparsely check num_checks number of parameters
+	grad_check_sparse(f, model.params[name], grads[name], num_checks=10)
