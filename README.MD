@@ -28,6 +28,6 @@ net model, or test a trained model on a dataset.
 
 
 [Stanford CS231n]: http://cs231n.github.io/
-[net_train_example.txt]: ./net_train_example.txt
-[gradient_check_example.txt]: ./gradient_check_example.txt
-[predict_test_example.txt]: ./predict_test_example.txt
+[net_train_example.txt]: https://github.com/edwinfj/fc-nn/net_train_example.txt
+[gradient_check_example.txt]: https://github.com/edwinfj/fc-nn/gradient_check_example.txt
+[predict_test_example.txt]: https://github.com/edwinfj/fc-nn/predict_test_example.txt
