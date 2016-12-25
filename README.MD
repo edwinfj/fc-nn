@@ -26,8 +26,12 @@ gradients of a net.
 [predict_test_example.txt] demonstrates how to run prediction using a trained 
 net model, or test a trained model on a dataset.
 
+====
+[Requirements]: python2.7, numpy, matplotlib, pillow
+
 
 [Stanford CS231n]: http://cs231n.github.io/
 [net_train_example.txt]: https://github.com/edwinfj/fc-nn/blob/master/net_train_example.txt
-[gradient_check_examples.txt]: https://github.com/edwinfj/fc-nn/blob/gradient_check_examples.txt
-[predict_test_example.txt]: https://github.com/edwinfj/fc-nn/blob/predict_test_example.txt
+[gradient_check_examples.txt]: https://github.com/edwinfj/fc-nn/blob/master/gradient_check_examples.txt
+[predict_test_example.txt]: https://github.com/edwinfj/fc-nn/blob/master/predict_test_example.txt
+[Requirements]: https://github.com/edwinfj/fc-nn/blob/master/requirements.txt
