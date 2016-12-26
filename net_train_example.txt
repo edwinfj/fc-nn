@@ -3,7 +3,7 @@
 This module demonstrates how to train a fully connected net.
 The basic steps to do training:
 1. create a net model. The architecture of the net is:
-	input --- {-affine-[-batch normalization-]-relu-[-dropout-]} * N --- softmax.
+	input-{-affine-[-batch normalization-]-relu-[-dropout-]}*N-affine-softmax.
 	By default batch normalization and dropout are not used. Use L2 weight decay
 	for regularization. refer to lib/fc_net.py for details.
 2. create a solver, which specifies the optimization method for training. Refer
