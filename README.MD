@@ -4,7 +4,7 @@ A fully connected neural network with arbitrary layer numbers. Derived from
 [Stanford CS231n] assignments. The net is built from scratch. 
 The architecture of the net is:
 
-`input---[-affine-[-batch normalization-]-relu-[-dropout-]] * N---softmax`
+`input---[-affine-[-batch normalization-]-relu-[-dropout-]] * N---affine--softmax`
 
 By default batch normalization and dropout are **not** used. Use L2 weight decay
 for regularization.
