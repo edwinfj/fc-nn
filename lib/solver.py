@@ -112,10 +112,10 @@ class Solver(object):
     self.Xtr_mean = np.mean(self.X_train, axis=0) # mean of each feature in Xtr
     self.Xtr_std = np.std(self.X_train, axis=0) # std of each feature in Xtr
     # scale the dataset to 0 mean and 1 std before training / validation
-    if self.Xtr_mean !=0:
+    if np.any(self.Xtr_mean !=0):
       self.X_train -= self.Xtr_mean
       self.X_val -= self.Xtr_mean
-    if self.Xtr_std != 1:
+    if np.any(self.Xtr_std != 1):
       self.X_train /= self.Xtr_std
       self.X_val /= self.Xtr_std
     
