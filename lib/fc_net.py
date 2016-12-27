@@ -1,7 +1,7 @@
 import numpy as np
 
-from layers import *
-from layer_utils import *
+from lib.layers import *
+from lib.layer_utils import *
 
 class FullyConnectedNet(object):
   """
