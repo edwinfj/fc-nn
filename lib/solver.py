@@ -128,6 +128,8 @@ class Solver(object):
 
     self.print_every = kwargs.pop('print_every', 10)
     self.verbose = kwargs.pop('verbose', True)
+    self.check_num_samples = kwargs.pop('check_num_samples', 1000)
+    self.check_batch_size = kwargs.pop('check_batch_size', 1000)
 
     # Throw an error if there are extra keyword arguments
     if len(kwargs) > 0:
