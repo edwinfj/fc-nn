@@ -305,7 +305,9 @@ class Solver(object):
         train_acc = self.check_accuracy(self.X_train, self.y_train,
                     num_samples=self.check_num_samples, 
                     batch_size=self.check_batch_size, scaled=True)
-        val_acc = self.check_accuracy(self.X_val, self.y_val)
+        val_acc = self.check_accuracy(self.X_val, self.y_val,
+                     num_samples=self.check_num_samples, 
+                     batch_size=self.check_batch_size, scaled=True)
         self.train_acc_history.append(train_acc)
         self.val_acc_history.append(val_acc)
 
