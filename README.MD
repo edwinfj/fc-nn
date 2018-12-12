@@ -9,15 +9,16 @@ The architecture of the net is:
 By default batch normalization and dropout are _**not**_ used. L2 weight decay
 is used for regularization.
 
-#### [net_train_example.txt] demonstrates how to train a fully connected net.
+### [net_train_example.txt] demonstrates how to train a fully connected net.
 The basic steps to do training:
- 1. create a net model, specifying the number of layers and number of units in each layer.
- 2. create a solver, which specifies the optimization method for training.
- Options of optimization method:
-  - sgd
-  - sgd_momentum: Nesterov momentum
-  - rms_prop
-  - adam
+1. create a net model, specifying the number of layers and number of units in each layer.
+2. create a solver, which specifies the optimization method for training.
+
+Options of optimization method:
+- sgd
+- sgd_momentum: Nesterov momentum
+- rms_prop
+- adam
 
 [gradient_check_examples.txt] demonstrate how to do numerical check for backprop
 gradients of a net.
@@ -25,7 +26,7 @@ gradients of a net.
 [predict_test_example.txt] demonstrates how to run prediction using a trained 
 net model, or test a trained model on a dataset.
 
-#### [Requirements]: python2.7, numpy, matplotlib, pillow
+### [Requirements]: python2.7, numpy, matplotlib, pillow
 
 
 [Stanford CS231n]: http://cs231n.github.io/
