@@ -1,6 +1,6 @@
 import numpy as np
 
-import optim
+from lib import optim
 
 
 class Solver(object):
@@ -112,10 +112,10 @@ class Solver(object):
     self.Xtr_mean = np.mean(self.X_train, axis=0) # mean of each feature in Xtr
     self.Xtr_std = np.std(self.X_train, axis=0) # std of each feature in Xtr
     # scale the dataset to 0 mean and 1 std before training / validation
-    if self.Xtr_mean !=0:
+    if np.any(self.Xtr_mean !=0):
       self.X_train -= self.Xtr_mean
       self.X_val -= self.Xtr_mean
-    if self.Xtr_std != 1:
+    if np.any(self.Xtr_std != 1):
       self.X_train /= self.Xtr_std
       self.X_val /= self.Xtr_std
     
@@ -128,6 +128,8 @@ class Solver(object):
 
     self.print_every = kwargs.pop('print_every', 10)
     self.verbose = kwargs.pop('verbose', True)
+    self.check_num_samples = kwargs.pop('check_num_samples', 1000)
+    self.check_batch_size = kwargs.pop('check_batch_size', 1000)
 
     # Throw an error if there are extra keyword arguments
     if len(kwargs) > 0:
@@ -303,7 +305,9 @@ class Solver(object):
         train_acc = self.check_accuracy(self.X_train, self.y_train,
                     num_samples=self.check_num_samples, 
                     batch_size=self.check_batch_size, scaled=True)
-        val_acc = self.check_accuracy(self.X_val, self.y_val)
+        val_acc = self.check_accuracy(self.X_val, self.y_val,
+                     num_samples=self.check_num_samples, 
+                     batch_size=self.check_batch_size, scaled=True)
         self.train_acc_history.append(train_acc)
         self.val_acc_history.append(val_acc)
 

@@ -1,4 +1,4 @@
-from layers import *
+from lib.layers import *
 
 
 def affine_relu_forward(x, w, b):
